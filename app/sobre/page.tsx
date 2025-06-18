@@ -1,5 +1,6 @@
 import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
+import { Users, UserCheck } from "lucide-react"
 
 export default function SobrePage() {
   return (
@@ -27,13 +28,19 @@ export default function SobrePage() {
               leitor, espalhando histórias e conhecimento por toda parte.
             </p>
 
-            <h2 className="text-2xl font-bold text-slate-800 mb-4">Como Funciona</h2>
+            <div className="flex items-center mb-6">
+              <Users className="w-8 h-8 text-slate-700 mr-3" />
+              <h2 className="text-2xl font-bold text-slate-800 mb-0">Como Funciona</h2>
+            </div>
             <p className="text-gray-700 mb-6">
               É simples: cadastre os livros que você já leu e não usa mais, encontre outros leitores interessados em
               trocas e descubra novos títulos para sua biblioteca pessoal.
             </p>
 
-            <h2 className="text-2xl font-bold text-slate-800 mb-4">Nossa Comunidade</h2>
+            <div className="flex items-center mb-6">
+              <UserCheck className="w-8 h-8 text-slate-700 mr-3" />
+              <h2 className="text-2xl font-bold text-slate-800 mb-0">Nossa Comunidade</h2>
+            </div>
             <p className="text-gray-700">
               Mais de 400 usuários ativos, 1.250 livros cadastrados e 900 trocas realizadas. Junte-se a nós e faça parte
               desta rede de compartilhamento de conhecimento!

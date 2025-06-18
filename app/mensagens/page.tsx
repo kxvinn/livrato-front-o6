@@ -5,13 +5,13 @@ import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { Send, Search } from "lucide-react"
+import { Send, Search, Users, UserCircle } from "lucide-react"
 import Image from "next/image"
 
 const conversations = [
   {
     id: 1,
-    name: "Vinícius Kaul Geraldo",
+    name: "Vinícius Kauã Geraldo",
     location: "Taquaritinga - SP",
     avatar: "/placeholder.svg?height=40&width=40",
     lastMessage: "Olá! Tenho interesse no seu livro...",
@@ -83,7 +83,10 @@ export default function MensagensPage() {
           {/* Conversations List */}
           <div className="lg:col-span-1 bg-white rounded-lg shadow-sm">
             <div className="p-4 border-b">
-              <h2 className="text-xl font-semibold text-gray-800 mb-4">Messages</h2>
+              <div className="flex items-center mb-4">
+                <Users className="w-6 h-6 text-gray-600 mr-2" />
+                <h2 className="text-xl font-semibold text-gray-800">Messages</h2>
+              </div>
               <div className="relative">
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
                 <Input placeholder="Buscar" className="pl-10 bg-gray-50 border-gray-200" />
@@ -126,13 +129,18 @@ export default function MensagensPage() {
           <div className="lg:col-span-2 bg-white rounded-lg shadow-sm flex flex-col">
             {/* Chat Header */}
             <div className="p-4 border-b flex items-center space-x-3">
-              <Image
-                src={selectedConversation.avatar || "/placeholder.svg"}
-                alt={selectedConversation.name}
-                width={40}
-                height={40}
-                className="rounded-full"
-              />
+              <div className="relative">
+                <Image
+                  src={selectedConversation.avatar || "/placeholder.svg"}
+                  alt={selectedConversation.name}
+                  width={40}
+                  height={40}
+                  className="rounded-full"
+                />
+                <div className="absolute -bottom-1 -right-1 bg-green-500 rounded-full p-1">
+                  <UserCircle className="w-3 h-3 text-white" />
+                </div>
+              </div>
               <div>
                 <h3 className="font-semibold text-gray-800">{selectedConversation.name}</h3>
                 <p className="text-sm text-gray-600">{selectedConversation.location}</p>

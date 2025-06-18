@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { Facebook, Linkedin, Twitter, Youtube } from "lucide-react"
+import Image from "next/image"
 
 export function Footer() {
   return (
@@ -8,9 +9,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <div className="flex items-center space-x-2 mb-4">
-              <div className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-sm">LIVRATO</span>
-              </div>
+              <Image src="/images/livrato-logo.png" alt="LIVRATO" width={140} height={70} className="h-32 w-auto" />
             </div>
             <p className="text-gray-600 text-sm mb-4">Troque histórias, descubra mundos.</p>
             <div className="flex space-x-4">
@@ -22,40 +21,40 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="font-semibold text-gray-800 mb-4">EMPRESA</h3>
-            <ul className="space-y-2 text-sm text-gray-600">
+            <h3 className="font-semibold text-slate-700 mb-4">EMPRESA</h3>
+            <ul className="space-y-2 text-sm text-slate-700">
               <li>
-                <Link href="/" className="hover:text-gray-800">
+                <Link href="/" className="hover:text-blue-800">
                   Início
                 </Link>
               </li>
               <li>
-                <Link href="/sobre" className="hover:text-gray-800">
+                <Link href="/sobre" className="hover:text-blue-800">
                   Sobre Nós
                 </Link>
               </li>
               <li>
-                <Link href="/livros" className="hover:text-gray-800">
+                <Link href="/livros" className="hover:text-blue-800">
                   Livros
                 </Link>
               </li>
               <li>
-                <Link href="/ebooks" className="hover:text-gray-800">
+                <Link href="/ebooks" className="hover:text-blue-800">
                   E-books
                 </Link>
               </li>
               <li>
-                <Link href="/lancamentos" className="hover:text-gray-800">
+                <Link href="/lancamentos" className="hover:text-blue-800">
                   LANÇAMENTOS
                 </Link>
               </li>
               <li>
-                <Link href="/contato" className="hover:text-gray-800">
+                <Link href="/contato" className="hover:text-blue-800">
                   Nosso Contato
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="hover:text-gray-800">
+                <Link href="/blog" className="hover:text-blue-800">
                   BLOG
                 </Link>
               </li>

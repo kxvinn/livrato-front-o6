@@ -1,9 +1,10 @@
 "use client"
 
 import Link from "next/link"
-import { Search, User, Heart } from "lucide-react"
+import { Search, Heart, UserPlus } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import Image from "next/image"
 
 export function Header() {
   return (
@@ -11,9 +12,7 @@ export function Header() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between py-4">
           <Link href="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center">
-              <span className="text-white font-bold text-sm">LIVRATO</span>
-            </div>
+            <Image src="/images/livrato-logo.png" alt="LIVRATO" width={500} height={120} className="h-32 w-auto" />
           </Link>
 
           <div className="flex-1 max-w-md mx-8">
@@ -32,25 +31,28 @@ export function Header() {
             </Link>
             <Link href="/mensagens">
               <Button variant="ghost" size="sm">
-                <User className="w-4 h-4 mr-2" />A CONTA
+                <UserPlus className="w-4 h-4 mr-2" />A CONTA
               </Button>
             </Link>
           </div>
         </div>
 
         <nav className="bg-slate-700 -mx-4 px-4">
-          <div className="flex space-x-8 py-3">
-            <Link href="/" className="text-white hover:text-gray-200 text-sm font-medium">
-              INÍCIO
+          <div className="flex justify-center items-center py-4">
+            <Link href="/" className="text-gray-300 hover:text-white text-sm font-medium">
+              Início
             </Link>
-            <Link href="/sobre" className="text-white hover:text-gray-200 text-sm font-medium">
-              SOBRE NÓS
+            <span className="text-gray-400 mx-4">|</span>
+            <Link href="/sobre" className="text-gray-300 hover:text-white text-sm font-medium">
+              Sobre Nós
             </Link>
+            <span className="text-gray-400 mx-4">|</span>
             <Link href="/livros" className="text-white hover:text-gray-200 text-sm font-medium">
-              LIVROS
+              Livros
             </Link>
-            <Link href="/contato" className="text-white hover:text-gray-200 text-sm font-medium">
-              CONTATO
+            <span className="text-gray-400 mx-4">|</span>
+            <Link href="/contato" className="text-gray-300 hover:text-white text-sm font-medium">
+              Contato
             </Link>
           </div>
         </nav>

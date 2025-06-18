@@ -9,27 +9,27 @@ import Link from "next/link"
 const relatedBooks = [
   {
     id: 1,
-    title: "The Lady Beauty Sunset",
-    author: "Autor Fictício",
-    image: "/placeholder.svg?height=200&width=150",
+    title: "The Hypocrite World",
+    author: "Sophia Hill",
+    image: "/images/books/hypocrite-world.png",
   },
   {
     id: 2,
-    title: "The Lady Beauty Sunset",
+    title: "Great Travel At Desert",
     author: "Autor Fictício",
-    image: "/placeholder.svg?height=200&width=150",
+    image: "/images/books/great-travel-desert.png",
   },
   {
     id: 3,
-    title: "The Lady Beauty Sunset",
-    author: "Autor Fictício",
-    image: "/placeholder.svg?height=200&width=150",
+    title: "Your Simple Book Cover",
+    author: "Ken Adams",
+    image: "/images/books/simple-book-cover.png",
   },
   {
     id: 4,
-    title: "Great Travel At Desert",
-    author: "Autor Fictício",
-    image: "/placeholder.svg?height=200&width=150",
+    title: "The Lady Beauty Scarlett",
+    author: "Arthur Doyle",
+    image: "/images/books/lady-beauty-scarlett.png",
   },
 ]
 
@@ -39,7 +39,7 @@ export default function BookDetailPage() {
       <Header />
 
       {/* Breadcrumb */}
-      <div className="bg-pink-100 py-2">
+      <div className="bg-pink-100 py-2 text-center">
         <div className="container mx-auto px-4">
           <p className="text-sm text-gray-600">
             <Link href="/" className="hover:text-gray-800">
@@ -63,10 +63,10 @@ export default function BookDetailPage() {
 
             <div className="grid grid-cols-2 gap-4 mb-6 text-sm">
               <div>
-                <span className="font-semibold">Author:</span> Arnholt Bornday
+                <span className="font-semibold">Author:</span> Armor Ramsey
               </div>
               <div>
-                <span className="font-semibold">ISBN:</span> N
+                <span className="font-semibold">ISBN:</span> 978-0123456789
               </div>
               <div>
                 <span className="font-semibold">Editora:</span> Saraiva.br
@@ -87,7 +87,9 @@ export default function BookDetailPage() {
             </p>
 
             <div className="flex space-x-4">
-              <Button className="bg-slate-700 hover:bg-slate-800 text-white px-8">Adicionar à Lista de Desejos</Button>
+              <Button className="bg-slate-300 hover:bg-slate-800 text-black hover:text-white px-8">
+                Adicionar à Lista de Desejos
+              </Button>
               <Link href="/usuarios">
                 <Button className="bg-slate-700 hover:bg-slate-800 text-white px-8">Combinar Troca</Button>
               </Link>
@@ -97,15 +99,19 @@ export default function BookDetailPage() {
           {/* Book Image */}
           <div className="flex justify-center">
             <div className="relative">
-              <Image
-                src="/placeholder.svg?height=400&width=300"
-                alt="Simple Way Of Piece Life"
-                width={300}
-                height={400}
-                className="rounded-lg shadow-lg"
-              />
+              <div
+                className="relative bg-gray-100 rounded-lg overflow-hidden shadow-lg"
+                style={{ width: "300px", height: "400px" }}
+              >
+                <Image
+                  src="/images/books/simple-way-piece-life.png"
+                  alt="Simple Way Of Piece Life"
+                  fill
+                  className="object-contain rounded-lg"
+                />
+              </div>
               <div className="absolute bottom-4 right-4 bg-slate-700 text-white px-3 py-1 rounded text-sm">
-                Arnholt Bornday
+                Armor Ramsey
               </div>
             </div>
           </div>
@@ -120,13 +126,15 @@ export default function BookDetailPage() {
               <Link href={`/livros/${book.id}`} key={book.id}>
                 <Card className="group cursor-pointer relative">
                   <CardContent className="p-4">
-                    <div className="relative mb-4">
+                    <div
+                      className="relative mb-4 bg-gray-100 rounded-lg overflow-hidden"
+                      style={{ aspectRatio: "3/4" }}
+                    >
                       <Image
                         src={book.image || "/placeholder.svg"}
                         alt={book.title}
-                        width={150}
-                        height={200}
-                        className="w-full h-48 object-cover rounded-lg"
+                        fill
+                        className="object-contain rounded-lg"
                       />
                       <button className="absolute top-2 right-2 p-2 bg-white rounded-full shadow-md hover:bg-gray-50">
                         <Heart className="w-4 h-4 text-gray-400" />

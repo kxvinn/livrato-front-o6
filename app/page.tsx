@@ -2,7 +2,7 @@ import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Star, Search, BookOpen, FileText, CheckCircle, Handshake } from "lucide-react"
+import { Star, Search, BookOpen, FileText, CheckCircle, Handshake, Users } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -12,55 +12,55 @@ const recentBooks = [
     title: "The Mind Connection",
     author: "Joyce Meyer",
     rating: 4.5,
-    image: "/placeholder.svg?height=200&width=150",
+    image: "/images/books/mind-connection.png",
   },
   {
     id: 2,
     title: "The Road to Recognition",
     author: "Seth Price",
     rating: 4.8,
-    image: "/placeholder.svg?height=200&width=150",
+    image: "/images/books/road-to-recognition-1.png",
   },
   {
     id: 3,
-    title: "Battlefield of the mind",
+    title: "Battlefield of the Mind",
     author: "Joyce Meyer",
     rating: 4.6,
-    image: "/placeholder.svg?height=200&width=150",
+    image: "/images/books/battlefield-mind.png",
   },
   {
     id: 4,
     title: "The Road to Recognition",
     author: "Seth Price",
     rating: 4.7,
-    image: "/placeholder.svg?height=200&width=150",
+    image: "/images/books/road-to-recognition-2.png",
   },
 ]
 
 const categories = [
   {
     title: "Ensino Superior",
-    image: "/placeholder.svg?height=200&width=300",
+    image: "/images/categories/ensino-superior.png",
     overlay: true,
   },
   {
     title: "Livros De Gerenciamento",
-    image: "/placeholder.svg?height=200&width=300",
+    image: "/images/categories/gerenciamento.png",
     overlay: true,
   },
   {
     title: "Livros De Finanças",
-    image: "/placeholder.svg?height=200&width=300",
+    image: "/images/categories/financas.png",
     overlay: true,
   },
   {
     title: "Livros De Engenharia",
-    image: "/placeholder.svg?height=200&width=300",
+    image: "/images/categories/engenharia.png",
     overlay: true,
   },
   {
     title: "Livros Comerciais",
-    image: "/placeholder.svg?height=200&width=300",
+    image: "/images/categories/comerciais.png",
     overlay: true,
   },
 ]
@@ -88,22 +88,13 @@ export default function HomePage() {
               </Link>
             </div>
             <div className="relative">
-              <div className="grid grid-cols-2 gap-4">
-                <Image
-                  src="/placeholder.svg?height=300&width=200"
-                  alt="Book 1"
-                  width={200}
-                  height={300}
-                  className="rounded-lg shadow-lg transform rotate-3"
-                />
-                <Image
-                  src="/placeholder.svg?height=300&width=200"
-                  alt="Book 2"
-                  width={200}
-                  height={300}
-                  className="rounded-lg shadow-lg transform -rotate-2 mt-8"
-                />
-              </div>
+              <Image
+                src="/images/hero-books-transparent.png"
+                alt="Coleção de Livros"
+                width={500}
+                height={400}
+                className="rounded-lg"
+              />
             </div>
           </div>
         </div>
@@ -159,13 +150,15 @@ export default function HomePage() {
               <Link href={`/livros/${book.id}`} key={book.id}>
                 <Card className="group cursor-pointer">
                   <CardContent className="p-4">
-                    <div className="relative mb-4">
+                    <div
+                      className="relative mb-4 bg-gray-100 rounded-lg overflow-hidden"
+                      style={{ aspectRatio: "3/4" }}
+                    >
                       <Image
                         src={book.image || "/placeholder.svg"}
                         alt={book.title}
-                        width={150}
-                        height={200}
-                        className="w-full h-48 object-cover rounded-lg"
+                        fill
+                        className="object-contain rounded-lg"
                       />
                     </div>
                     <h3 className="font-semibold text-sm mb-2 group-hover:text-orange-500">{book.title}</h3>
@@ -259,9 +252,7 @@ export default function HomePage() {
 
             <div>
               <div className="w-16 h-16 bg-slate-700 rounded-full flex items-center justify-center mx-auto mb-4">
-                <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
-                  <span className="text-slate-700 text-xs font-bold">+</span>
-                </div>
+                <Users className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-3xl font-bold text-slate-800 mb-2">400</h3>
               <p className="text-gray-600">Usuários ativos</p>

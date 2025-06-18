@@ -2,7 +2,7 @@ import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Heart, Trash2 } from "lucide-react"
+import { Heart, Trash2, Users } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -80,7 +80,10 @@ export default function DesejosPage() {
           </div>
         ) : (
           <div className="text-center py-16">
-            <Heart className="w-16 h-16 text-gray-300 mx-auto mb-4" />
+            <div className="flex items-center justify-center mb-4">
+              <Heart className="w-16 h-16 text-gray-300 mr-2" />
+              <Users className="w-12 h-12 text-gray-300" />
+            </div>
             <h2 className="text-2xl font-bold text-gray-600 mb-4">Sua lista de desejos está vazia</h2>
             <p className="text-gray-500 mb-8">Adicione livros que você gostaria de ler à sua lista de desejos</p>
             <Link href="/livros">

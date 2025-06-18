@@ -13,44 +13,44 @@ import Link from "next/link"
 const books = [
   {
     id: 1,
-    title: "Simple Way Of Piece Life",
-    author: "Autor Fictício",
-    image: "/placeholder.svg?height=200&width=150",
+    title: "The Hypocrite World",
+    author: "Sophia Hill",
+    image: "/images/books/hypocrite-world.png",
     liked: false,
   },
   {
     id: 2,
     title: "Great Travel At Desert",
     author: "Autor Fictício",
-    image: "/placeholder.svg?height=200&width=150",
+    image: "/images/books/great-travel-desert.png",
     liked: false,
   },
   {
     id: 3,
-    title: "The Lady Beauty Sunset",
-    author: "Autor Fictício",
-    image: "/placeholder.svg?height=200&width=150",
+    title: "Your Simple Book Cover",
+    author: "Ken Adams",
+    image: "/images/books/simple-book-cover.png",
     liked: false,
   },
   {
     id: 4,
-    title: "Great Travel At Desert",
-    author: "Autor Fictício",
-    image: "/placeholder.svg?height=200&width=150",
+    title: "The Lady Beauty Scarlett",
+    author: "Arthur Doyle",
+    image: "/images/books/lady-beauty-scarlett.png",
     liked: false,
   },
   {
     id: 5,
-    title: "The Lady Beauty Sunset",
+    title: "My Book Cover",
     author: "Autor Fictício",
-    image: "/placeholder.svg?height=200&width=150",
+    image: "/images/books/my-book-cover.png",
     liked: false,
   },
   {
     id: 6,
-    title: "The Lady Beauty Sunset",
-    author: "Autor Fictício",
-    image: "/placeholder.svg?height=200&width=150",
+    title: "Simple Way Of Piece Life",
+    author: "Armor Ramsey",
+    image: "/images/books/simple-way-piece-life.png",
     liked: false,
   },
 ]
@@ -72,7 +72,7 @@ export default function LivrosPage() {
 
       {/* Breadcrumb */}
       <div className="bg-pink-100 py-2">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 text-center">
           <p className="text-sm text-gray-600">
             <Link href="/" className="hover:text-gray-800">
               INÍCIO
@@ -161,13 +161,15 @@ export default function LivrosPage() {
                 <Link href={`/livros/${book.id}`} key={book.id}>
                   <Card className="group cursor-pointer relative">
                     <CardContent className="p-4">
-                      <div className="relative mb-4">
+                      <div
+                        className="relative mb-4 bg-gray-100 rounded-lg overflow-hidden"
+                        style={{ aspectRatio: "3/4" }}
+                      >
                         <Image
                           src={book.image || "/placeholder.svg"}
                           alt={book.title}
-                          width={150}
-                          height={200}
-                          className="w-full h-48 object-cover rounded-lg"
+                          fill
+                          className="object-contain rounded-lg"
                         />
                         <button
                           onClick={(e) => {
